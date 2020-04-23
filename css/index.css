@@ -1,0 +1,136 @@
+body{
+    margin: 0 10vw 0 10vw;
+}
+
+a{
+    display:inline-block;
+
+    color: black;
+    font-size: 2vh;
+    text-decoration: none;
+}
+
+header{
+    height: 4vh;
+
+    border: 2px black solid;
+}
+header>nav{
+    display: flex;
+
+    width: 100%;
+}
+
+header a{
+    flex-grow: 1;
+
+    line-height: 4vh;
+    text-align: center;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    height: 90vh
+}
+
+
+#slider{
+    display: flex;
+
+    height: 38vh;
+    width: 60vw;
+
+    margin: 5vh 2vw 0 0;
+
+    border: 2px black solid;
+}
+
+#slider>ul{
+    display: flex;
+
+    width: 85%;
+
+    padding: 0 1vw 0 1vw;
+
+    list-style-type: none;
+    border: 2px black solid;
+}
+
+#slider li{
+    display: block;
+
+    width: 16vw;
+    height: 15vw;
+
+    margin: 0 1vw 0 1vw;
+
+    border: 2px black solid;
+}
+
+
+#slider>button{
+    width: 2vw;
+    height: 6vh;
+
+    margin: 16vh 1vw 0 1vw;
+
+    border: 2px black solid;
+}
+
+
+#topRated{
+    height: 38vh;
+    width: 60vw;
+
+    margin: 5vh 2vw 0 0;
+
+    border: 2px black solid;
+}
+
+
+#best{
+    display: block;
+
+    height: 30vh;
+    width: 16vw;
+
+    margin-top: 5vh;
+
+    border: 2px black solid;
+}
+
+
+#feed{
+    display: block;
+
+    height: 16vh;
+    width: 16vw;
+
+    margin-top: 5vh;
+
+    border: 2px black solid;
+}
+
+
+footer{
+    height: 4vh;
+
+    border: 2px black solid;
+}
+
+footer>nav{
+    display: flex;
+
+    width: 100%;
+}
+
+footer a{
+    flex-grow: 1;
+
+    line-height: 4vh;
+    text-align: center;
+}
