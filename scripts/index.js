@@ -2,6 +2,7 @@ let sliderList = {elements: document.getElementById("sliderList").children, show
 let ratingList = {elements: document.getElementById("ratingList").children, shown: [0, 1, 2, 3, 4, 5]}
 let modalWindow = document.getElementById("modalWindow");
 
+setInterval(function(){moveSlider('right')}, 3000)
 function moveSlider(direction){
     if (direction === 'left'){
         if (sliderList["shown"][0] != 0){
@@ -57,8 +58,10 @@ function openModalWindow(e){
     let info = e.parentNode.children;
     modalWindow.style.display = "block"
 
-    for (let i = 0; i < (info.length-1); i++){
-        modalWindow.append(info[i].cloneNode(true))
+    for (let i = 0; i < (info.length); i++){
+        if (info[i].tagName != "BUTTON"){
+            modalWindow.append(info[i].cloneNode(true))
+        }
     }
 
 }
