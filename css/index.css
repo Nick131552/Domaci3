@@ -55,26 +55,38 @@ main{
 
     width: 85%;
 
-    padding: 0 1vw 0 1vw;
+    padding: 0 1vw 0 2vw;
 
     list-style-type: none;
 }
 
 #slider li{
     display: block;
+    z-index: 1;
 
-    width: 16vw;
+    width: 15vw;
     height: 15vw;
-    margin: 0 1vw 0 1vw;
+    margin: 0 0.5vw 0 0.5vw;
 
     text-align: center;
+    color: white;
     border: 2px black solid;
+}
+
+#slider li>img{
+    position: absolute;
+    z-index: -1;
+
+    width: 15.2vw;
+    height: 15vw;
+    margin: 0 0vw 0 -7.6vw;
+
+    text-align: center;
 }
 
 #slider li>h5{
     display: none;
 }
-
 
 #slider>button{
     width: 2vw;
@@ -83,6 +95,13 @@ main{
     margin: 16vh 1vw 0 1vw;
 
     border: 2px black solid;
+}
+
+#slider>button>img{
+    width: 1.8vw;
+    height: 5.5vh;
+
+    margin: -0.1vh 0 0 -0.5vw;
 }
 
 
@@ -217,14 +236,16 @@ footer a{
 
 #modalWindow{
     display: none;
+    flex-direction: column;
+    align-items: center;
+
     position: fixed;
     z-index: 10;
 
-    width: 90vh;
-    height: 90vh;
+    width: 0vh;
+    height: 0vh;
     margin: 5vh 0 0 18vw;
 
-    text-align: center;
 
     background-color: white;
     border: 2px black solid;
@@ -232,9 +253,19 @@ footer a{
 }
 
 #modalWindow>button{
-    float: right;
-    margin: 1vh 1vh 1vh 1vh;
+    width: 2vw;
+    height: 2vw;
+    margin: 1vh 1vh 1vh 40vw;
 
     color: white;
     background-color: rgb(221, 54, 54);
+}
+
+#modalWindow img{
+    display: block;
+
+    width: 20vw;
+    height: 20vw;
+
+    border: 2px black solid;
 }

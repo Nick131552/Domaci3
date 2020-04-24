@@ -2,6 +2,22 @@ let sliderList = {elements: document.getElementById("sliderList").children, show
 let ratingList = {elements: document.getElementById("ratingList").children, shown: [0, 1, 2, 3, 4, 5]}
 let modalWindow = document.getElementById("modalWindow");
 
+
+document.getElementById("slider").addEventListener("mouseenter", function(){
+    document.addEventListener("keydown", mouseInSlider)
+})
+document.getElementById("slider").addEventListener("mouseleave", function(){
+    document.removeEventListener("keydown", mouseInSlider)
+})
+function mouseInSlider(e){
+    if (e.keyCode == '39'){
+        moveSlider('right')
+    }
+    else if (e.keyCode == '37'){
+        moveSlider('left')
+    }
+}
+
 setInterval(function(){moveSlider('right')}, 3000)
 function moveSlider(direction){
     if (direction === 'left'){
@@ -55,20 +71,39 @@ function moveSlider(direction){
 
 
 function openModalWindow(e){
-    let info = e.parentNode.children;
-    modalWindow.style.display = "block"
+    if (modalWindow.style.display !== "flex"){
+        let info = e.parentNode.children;
+        modalWindow.style.display = "flex"
 
-    for (let i = 0; i < (info.length); i++){
-        if (info[i].tagName != "BUTTON"){
-            modalWindow.append(info[i].cloneNode(true))
+        for (let i = 0; i < (info.length); i++){
+            if (info[i].tagName != "BUTTON"){
+                modalWindow.append(info[i].cloneNode(true))
+            }
+        }
+
+        for( let i=0; i < 900; i++){
+            setTimeout(function(){
+                modalWindow.style.width = (i/10).toString()+"vh"
+                modalWindow.style.height = (i/10).toString()+"vh"
+            }, 1)
         }
     }
-
 }
 
 function closeModalWindow(){
-    modalWindow.style.display = "none"
+    for( let i=900; i > 0; i--){
+        setTimeout(function(){
+            modalWindow.style.width = (i/10).toString()+"vh"
+            modalWindow.style.height = (i/10).toString()+"vh"
+        }, 1)
+    }
+
+    modalWindow.innerHTML = ""
+    
+    setTimeout(function(){
+        modalWindow.style.display = "none"
     modalWindow.innerHTML = "<button onclick=\"closeModalWindow()\">X</button>"
+    }, 90)
 }
 
 
@@ -91,3 +126,11 @@ function close(){
     document.getElementById("topRated").lastElementChild.innerText = "LOAD MORE";
     document.getElementById("topRated").lastElementChild.onclick = loadMore;
 }
+
+/*fetch('https://api.edamam.com/search?q=coffee&app_id=05b25fe9&app_key=4ac7b2f30d6e35231997c00de0a9bd45')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });*/
