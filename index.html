@@ -14,6 +14,8 @@
     </head>
 
     <body>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
         
         <div id="modalWindow">
             <button onclick="closeModalWindow()">X</button>
@@ -30,7 +32,7 @@
 
         <main>
             <div id="slider">
-                <button onclick="moveSlider('left')" style="margin: 16vh 0 0 1vw;"><img src="images/arrow.svg" alt="left" style="transform: rotate(180deg);"></button>
+                <button onclick="moveSlider('left')"><img src="images/arrow.svg" alt="left" style="transform: rotate(180deg);"></button>
 
                 <ul id="sliderList">
                     <li style="opacity: 0;">
@@ -105,7 +107,7 @@
 
                 </ul>
 
-                <button onclick="moveSlider('right')" style="margin: 16vh 0 0 56.5vw;"><img src="images/arrow.svg" alt="right"></button>
+                <button onclick="moveSlider('right')"><img src="images/arrow.svg" alt="right"></button>
             </div>
 
 
@@ -181,27 +183,26 @@
 
 
             <div id="best">
+                <h3></h3>
                 <ul id="bestList">
                     <li>
                         <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
-                        <h5>TITLE 1</h5>
+                        <h5 class="name">TITLE 1</h5>
                     </li>
                     <li>
                         <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
-                        <h5>TITLE 2</h5>
+                        <h5 class="name">TITLE 2</h5>
                     </li>
                     <li>
                         <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
-                        <h5>TITLE 3</h5>
+                        <h5 class="name">TITLE 3</h5>
                     </li>
                 </ul>
 
             </div>
 
 
-            <div id="feed">
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="220" height="210" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-            </div>
+            <div id="feed" class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-width="" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
         </main>
 
         <footer>
@@ -211,7 +212,7 @@
                 <a href="">CUSTOM PAGE</a>
                 <a href="">ABOUT US</a>
             </nav>
-            <a style="display:none" href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            <a style="display: none;" href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a>  <a style="display: none;" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </footer>
 
         <script src="scripts/index.js"></script>
