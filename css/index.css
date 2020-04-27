@@ -70,6 +70,7 @@ main{
     color: white;
     -webkit-text-stroke: 1px black;
 
+    transition: opacity 2s, margin 2s;
     border: 2px black solid;
 }
 
@@ -193,8 +194,6 @@ main{
 
 #feed{
     display: block;
-
-
 
     margin: 5vh 0 0vh 0;
 
@@ -329,6 +328,12 @@ footer a{
     }
     
 
+    #feed{
+    
+        width: 100vw;
+
+    }
+
     
     #modalWindow{
         margin: 5vh 0 0 2vw;
@@ -426,7 +431,11 @@ footer a{
         width: 8vw;
     }
     
+    #feed{
+    
+        width: 16vw;
 
+    }
     
     #modalWindow{
         margin: 5vh 0 0 18vw;
@@ -443,3 +452,89 @@ footer a{
         height: 20vw;
     }
 }
+
+@media only screen and (min-width: 451px) and (max-width: 1023px){
+
+    
+    
+    #slider li{
+        width: 15vw;
+        height: 15vw;
+        margin: 0 0.5vw 0 0.5vw;
+
+        font-size: 3.5vh;
+    }
+    
+    #slider li>img{
+        width: 15vw;
+        height: 15vw;
+    }
+    
+
+    #slider li>button{
+        height: 5vh;
+        width: 12vw;
+        margin: 24vh 0 0 0;
+    }
+    #slider>button:first-of-type{
+        margin: 16vh 0 0 1vw;
+    }
+    #slider>button:last-of-type{
+        margin: 16vh 0 0 92.5vw;
+    }
+    
+
+    
+    #topRated li{
+        width: 28.5vw;
+        height: 10vw;
+    }
+    
+    #topRated li>img{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #topRated li>h5{
+        margin: 0.4vw 6vw 0.4vw 1vw;
+    }
+    
+    #best>ul{
+        flex-direction: row;
+    }
+    #best li{
+        width: 30vw;
+        height: 18vh;
+    }
+    #best li>img{
+        width: 14vh;
+        height: 14vh;
+    }
+
+    #best li>h5{
+        width: 8vw;
+    }
+    
+    #feed{
+    
+        width: fit-content;
+        margin-left: 15vw;
+
+    }
+    
+    #modalWindow{
+        margin: 5vh 0 0 4vw;
+    }
+    
+    #modalWindow>button{
+        width: 4vw;
+        height: 4vw;
+        margin: 1vh 1vh 1vh 85vw;
+    }
+    
+    #modalWindow img{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
