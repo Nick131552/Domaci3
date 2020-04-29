@@ -10,10 +10,9 @@ let modalWindow = document.getElementById("modalWindow");
 
 let lunch = {0: "chicken", 1: "croissant", 2: "eggs", 3: "beef", 4: "fish", 5: "soup", 6: "sandwich", 7: "chicken", 8: "salad", 9: "rice"}
 let dessert = {0: "ice-cream", 1: "waffle", 2: "pancake", 3: "cake", 4: "crepe", 5: "donut", 6: "cookie", 7: "fruit", 8: "pie", 9: "scone"}
-let drink = {0: "coffee", 1: "milkshake", 2: "tea", 3: "juice", 4: "smoothie"}
-let list = {0: lunch, 1: dessert, 2: drink}
+let list = {0: lunch, 1: dessert}
 
-let food = list[Math.floor(Math.random()*3).toString()][Math.floor(Math.random()*5).toString()]
+let food = list[Math.floor(Math.random()*2).toString()][Math.floor(Math.random()*10).toString()]
 
 let healthLabel = {0:'Balanced', 1:'High-protein', 2:'Low-fat', 3:'Low-carb'}
 let label = healthLabel[Math.floor(Math.random()*4).toString()]
@@ -181,7 +180,7 @@ function close(){
 
 
 
-function reload(){
+function load(){
 fetch('https://api.edamam.com/search?q='+food+'&app_id=05b25fe9&app_key=4ac7b2f30d6e35231997c00de0a9bd45')
   .then((response) => {
     return response.json();
@@ -213,7 +212,7 @@ while (sliderList.length > 5){
   });
 
 
-  food = list[Math.floor(Math.random()*3).toString()][Math.floor(Math.random()*5).toString()]
+  food = list[Math.floor(Math.random()*2).toString()][Math.floor(Math.random()*10).toString()]
 
 fetch('https://api.edamam.com/search?q='+food+'&from=0&to=9&app_id=05b25fe9&app_key=4ac7b2f30d6e35231997c00de0a9bd45')
   .then((response) => {
@@ -237,7 +236,7 @@ fetch('https://api.edamam.com/search?q='+food+'&from=0&to=9&app_id=05b25fe9&app_
 
 
   
-  food = list[Math.floor(Math.random()*3).toString()][Math.floor(Math.random()*5).toString()]
+  food = list[Math.floor(Math.random()*2).toString()][Math.floor(Math.random()*10).toString()]
   bestList[0].parentNode.parentNode.firstElementChild.innerText = label+" "+food+" recipes"
   
   fetch('https://api.edamam.com/search?q='+food+'&diet='+label.toLowerCase()+'&from=0&to=3&app_id=05b25fe9&app_key=4ac7b2f30d6e35231997c00de0a9bd45')
@@ -258,4 +257,4 @@ fetch('https://api.edamam.com/search?q='+food+'&from=0&to=9&app_id=05b25fe9&app_
     });
 }
 
-reload()
+load()
