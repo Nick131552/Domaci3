@@ -11,6 +11,13 @@ a{
     text-decoration: none;
 }
 
+br{
+    content: "";
+    display: block;
+    margin: 2em;
+    font-size: 50%;
+}
+
 header{
     height: 4vh;
 
@@ -36,23 +43,9 @@ header a{
     flex-wrap: wrap;
 }
 
-#searchDiv label:first-child, #searchDiv label:nth-child(2) {
-    display: flex;
-    line-height:  12vh;
-}
-
-#searchDiv label:nth-child(2) input{
-    width: initial;
-    height: initial;
-    margin: 5vh 0 0 -5vw;
-
-    line-height:  5vh;
-    text-indent: 0;
-}
-
 
 #searchDiv label{
-    display: none;
+    display: flex;
     width: 100%;
     height: auto;
     margin: 2.5vh 0 2.5vh 0;
@@ -71,48 +64,43 @@ header a{
     margin: 2.5vh 0 2.5vh 0;
 }
 
-
-
-#searchResult{
-    display: flex;
-    flex-direction: column;
-
-    padding: 0;
-
-    list-style-type: none;
+#searchDiv a{
+    margin: 3.5vh 0 2.5vh 0;
+    font-size: initial;
+    text-decoration: underline;
 }
 
-#searchResult li{
+
+
+#resultDiv{
     display: none;
     flex-direction: column;
     flex-wrap: wrap;
 
-    width: auto;
+    height: 88vh;
 
-    margin: 2.5vh 0 2.5vh 0;
-
-    border: black 2px solid;
+    border: 2px black solid;
 }
-
-#searchResult li>img{
+#resultDiv img{
     display: block;
 
-    width: 35vh;
-    height: 35vh;
+    height: 40vh;
+    width: 40vh;
+    margin: 5vh;
 
-    margin: auto 2vw auto 2vw;
-
-    border: black 2px solid;
+    border: 2px black solid;
 }
-
-#searchResult li>h5, #searchResult li>a{
+#resultDiv h5, #resultDiv h3, #resultDiv a{
     display: block;
 
-    margin: 2vh 2vw 2vh 0vw;
+    margin: 1vh 5vw 1vh 5vw;
+}
+#resultDiv p{
+    display: block;
 }
 
-#searchResult h5.info{
-    display: none;
+#resultDiv h3.ingredients{
+    margin-top: 10vh;
 }
 
 
@@ -192,24 +180,21 @@ footer a{
         margin: 2.5vh 0 2.5vh 35vw;
     }
 
-    #searchResult li{
-        flex-wrap: nowrap;
+
+    #resultDiv{
         align-items: center;
-        text-align: center;
-
-        height: fit-content;
+        height: auto;
     }
 
-    #searchResult li>h5, #searchResult li>a, #searchResult li>h3{
+    #resultDiv h5, #resultDiv h3, #resultDiv a{
+        display: block;
     
-        width: 95vw;
-
+        margin: 2vh 0vw 2vh 0vw;
     }
-    #searchResult button{
-        width: 15vw;
-        height: 8vh;
+    #resultDiv p{
+    
+        width: 90vw;
     }
-
     
     #modalWindow{
         margin: 5vh 0 0 2vw;
@@ -240,20 +225,15 @@ footer a{
         margin: 2.5vh 0 2.5vh 35vw;
     }
 
-    #searchResult li{
-        height: 40vh;
+    #resultDiv{
+        height: 88vh;
+
     }
 
-    #searchResult li>h5, #searchResult li>a, #searchResult li>h3{
+    #resultDiv p{
     
-        width: 50vw;
-
+        width: 30vw;
     }
-    #searchResult button{
-        width: 15vw;
-        height: 5vh;
-    }
-
     
     #modalWindow{
         margin: 5vh 0 0 -5vw;
@@ -282,22 +262,31 @@ footer a{
         margin: 2.5vh 0 2.5vh 35vw;
     }
 
-    #searchResult li>img{
-        margin: 5vh 2vw 20vh 2vw;
+    #resultDiv{
+        flex-direction: row;
+        height: auto;
     }
 
-    #searchResult li{
-        height: 47vh;
+    #resultDiv img{
+        width: 30vw;
+        height: 30vw;
     }
-    
-    #searchResult li>h5, #searchResult li>a, #searchResult li>h3{
-    
-        width: 45vw;
-    
+
+    #resultDiv h5, #resultDiv h3, #resultDiv a{
+        width: 30vw;
+
+        margin: 2vh;
+        font-size: 2.5vh;
     }
-    #searchResult button{
-        width: 24vw;
-        height: 5vh;
+
+    #resultDiv p{
+        height: 65vh;
+        width: 40vw;
+        font-size: 2vh;
+    }
+
+    #resultDiv h3.ingredients{
+        margin-top: 8vh;
     }
 
 

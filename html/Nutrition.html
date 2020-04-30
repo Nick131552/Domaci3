@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+
+        <title>Nutrition</title>
+        
+        <link rel="stylesheet" type="text/css" 
+        href="../css/nutrition.css">
+
+    </head>
+
+    <body id="body">
+
+        <header>
+            <nav>
+                <a href="../index.html">HOME</a>
+                <a href="Nutrition.html">RECIPE ANALYSIS</a>
+                <a href="Search.html">LIST</a>
+                <a href="AboutUs.html">ABOUT US</a>
+            </nav>
+        </header>
+
+        <main>
+            <div id="searchDiv">
+                <form>
+                    <label>
+                        <h4>Food name:</h4>
+                        <input type="text" name="q">
+                    </label>
+                    <label>
+                        <h4>Original URL: </h4>
+                        <input type="text" name="url">
+                    </label>
+                    <label>
+                        <h4>FIND RECIPE URLS AT:</h4>
+                        <a href="Search.html">  LIST  </a>
+                    </label>
+                </form>
+                <button onclick="analysis()">ANALYSIS</button>
+            </div>
+
+            <div id="resultDiv">
+                <div>
+                    <img src="" alt="img">
+                    <h3 class="name"></h3>
+                    <h5 class="serving"></h5>
+                    <h5 class="calories"></h5>
+                    <h5 class="energy"></h5>
+                    <h5 class="fat"></h5>
+                    <a href="" class="link"></a>
+                </div>
+                <div>
+                    <h3 class="ingredients">Ingredients: </h3>
+                    <p></p>
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer>
+            <nav>
+                <a href="../index.html">HOME</a>
+                <a href="Nutrition.html">RECIPE ANALYSIS</a>
+                <a href="Search.html">LIST</a>
+                <a href="AboutUs.html">ABOUT US</a>
+            </nav>
+        </footer>
+
+        <script id="script" src="../scripts/nutrition.js"></script>
+    </body>
+</html>

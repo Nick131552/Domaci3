@@ -2,33 +2,14 @@ let modalWindow = document.getElementById("modalWindow")
 let searchResult = document.getElementById("searchResult").children;
 
 
-
-function openModalWindow(e){
-    if (modalWindow.style.display !== "flex"){
-        modalWindow.style.display = "flex"
-
-
-            modalWindow.style.width = "90vw";
-            modalWindow.style.height = "90vh"
-
-            setTimeout(function(){
-                modalWindow.innerHTML = "<button onclick=\"closeModalWindow()\">X</button>"+e.parentNode.innerHTML;
-                modalWindow.removeChild(modalWindow.lastElementChild)
-            }, 1000)
+function checkIfChecked(e){
+    let name = e.name.toLowerCase()
+    if (e.checked){
+        document.getElementsByName(name)[0].parentNode.style.display = "flex";
     }
-}
-
-function closeModalWindow(){
-    modalWindow.style.height = "0vh"
-    modalWindow.style.width = "0vw"
-
-    modalWindow.innerHTML = ""
-    
-    setTimeout(function(){
-        modalWindow.style.display = "none"
-        modalWindow.innerHTML = ""
-    }, 1000)
-    
+    else {
+        document.getElementsByName(name)[0].parentNode.style.display = "none";
+    }
 }
 
 
@@ -57,9 +38,9 @@ function search(){
 
         for (let i = 0; i < 10; i++){
             data[i] = [data[i]["recipe"]["label"], data[i]["recipe"]["image"], data[i]["recipe"]["ingredientLines"], "Search keys: "+document.getElementsByName("q")[0].value+", "+data[i]["recipe"]["healthLabels"]+", "+data[i]["recipe"]["dietLabels"]+", "+ingr["value"], data[i]["recipe"]["url"]]
-            data[i][4] = data[i][4].replace("https://", "")
-            data[i][4] = data[i][4].replace("http://", "")
-            data[i][4] = "http://"+data[i][4].substr(0,data[i][4].indexOf("/"))
+            data[i][5] = data[i][4].replace("https://", "")
+            data[i][5] = data[i][4].replace("http://", "")
+            data[i][5] = "http://"+data[i][5].substr(0,data[i][5].indexOf("/"))
 
             searchResult[i].style.display = "flex"
             searchResult[i].firstElementChild.setAttribute("src", data[i][1])
@@ -67,7 +48,7 @@ function search(){
             searchResult[i].getElementsByClassName("search-tags")[0].innerText = data[i][3]
             searchResult[i].getElementsByClassName("info")[0].innerText = data[i][2]
             searchResult[i].getElementsByClassName("url")[0].setAttribute("href", data[i][4])
-            searchResult[i].getElementsByClassName("url")[0].innerText = data[i][4];
+            searchResult[i].getElementsByClassName("url")[0].innerText = data[i][5];
         }
         })
     
