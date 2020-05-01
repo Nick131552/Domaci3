@@ -49,3 +49,5 @@ function analysis(){
         
         
     }
+
+analysis()

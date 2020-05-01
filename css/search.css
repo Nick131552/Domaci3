@@ -13,8 +13,6 @@ a{
 
 header{
     height: 4vh;
-
-    border: 2px black solid;
 }
 header>nav{
     display: flex;
@@ -22,14 +20,41 @@ header>nav{
     width: 100%;
 }
 
-header a{
-    flex-grow: 1;
+header div{
+    z-index: 1000;
+
+    height: 4vh;
+    width: 25%;
 
     line-height: 4vh;
     text-align: center;
+
+    background-color: white;
+    border: 2px black solid;
+}
+
+header div:nth-of-type(3) a{
+    display: none;
+
+    margin: 0 0 2vh 0;
+}
+header div:nth-of-type(3):hover a{
+    display: block;
+}
+header div:nth-of-type(3):hover{
+    height: auto;
 }
 
 
+#resultDiv{
+    display: flex;
+}
+#resultDiv button{
+    margin: 130vh 1vw 0 0vw;
+}
+#resultDiv button:first-of-type{
+    margin: 130vh 1vw 0 26vw;
+}
 
 #searchDiv form{
     display: flex;
@@ -82,23 +107,49 @@ header a{
     list-style-type: none;
 }
 
-#searchResult li{
+#searchResult>li{
     display: none;
-    flex-direction: column;
-    flex-wrap: wrap;
+    position: absolute;
 
-    width: auto;
+
+    width: 80vw;
 
     margin: 2.5vh 0 2.5vh 0;
 
     border: black 2px solid;
 }
 
-#searchResult li>img{
+#searchResult>li>ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: auto;
+    height: auto;
+
+    margin: 2.5vh 0 2.5vh 0;
+}
+
+#searchResult>li>ul>li{
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+
+    width: 30vw;
+    height: 24vw;
+
+    margin: 2.5vh 3vw 2.5vh 3vw;
+
+    border: black 2px solid;
+}
+
+#searchResult>li>ul>li>img{
     display: block;
 
-    width: 35vh;
-    height: 35vh;
+    width: 18vh;
+    height: 18vh;
 
     margin: auto 2vw auto 2vw;
 
@@ -192,23 +243,6 @@ footer a{
         margin: 2.5vh 0 2.5vh 35vw;
     }
 
-    #searchResult li{
-        flex-wrap: nowrap;
-        align-items: center;
-        text-align: center;
-
-        height: fit-content;
-    }
-
-    #searchResult li>h5, #searchResult li>a, #searchResult li>h3{
-    
-        width: 95vw;
-
-    }
-    #searchResult button{
-        width: 15vw;
-        height: 8vh;
-    }
 
     
     #modalWindow{
@@ -240,20 +274,6 @@ footer a{
         margin: 2.5vh 0 2.5vh 35vw;
     }
 
-    #searchResult li{
-        height: 40vh;
-    }
-
-    #searchResult li>h5, #searchResult li>a, #searchResult li>h3{
-    
-        width: 50vw;
-
-    }
-    #searchResult button{
-        width: 15vw;
-        height: 5vh;
-    }
-
     
     #modalWindow{
         margin: 5vh 0 0 -5vw;
@@ -280,24 +300,6 @@ footer a{
         width: 20vw;
         height: 5vh;
         margin: 2.5vh 0 2.5vh 35vw;
-    }
-
-    #searchResult li>img{
-        margin: 5vh 2vw 20vh 2vw;
-    }
-
-    #searchResult li{
-        height: 47vh;
-    }
-    
-    #searchResult li>h5, #searchResult li>a, #searchResult li>h3{
-    
-        width: 45vw;
-    
-    }
-    #searchResult button{
-        width: 24vw;
-        height: 5vh;
     }
 
 

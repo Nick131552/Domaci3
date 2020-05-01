@@ -20,10 +20,15 @@
 
         <header>
             <nav>
-                <a href="../index.html">HOME</a>
-                <a href="Nutrition.html">RECIPE ANALYSIS</a>
-                <a href="Search.html">LIST</a>
-                <a href="AboutUs.html">ABOUT US</a>
+                <div><a href="../index.html">HOME</a></div>
+                <div><a href="Nutrition.html">RECIPE ANALYSIS</a></div>
+                <div>
+                    <a href="Search.html"  onclick="setMealType('lunch')" style="display: block;">LIST</a>
+                    <a href="Search.html" onclick="setMealType('breakfast')">BREAKFAST</a>
+                    <a href="Search.html" onclick="setMealType('lunch')">LUNCH</a>
+                    <a href="Search.html" onclick="setMealType('dinner')">DINNER</a>
+                </div>
+                <div><a href="AboutUs.html">ABOUT US</a></div>
             </nav>
         </header>
 
@@ -32,7 +37,7 @@
                 <form>
                     <label>
                         <h4>Food name:</h4>
-                        <input type="text" name="q" placeholder="Ex: chicken"  required>
+                        <input type="text" name="q" placeholder="Ex: chicken"  value="chicken" required>
                     </label>
 
                     <label>
@@ -61,79 +66,114 @@
                 <button onclick="search()">SEARCH</button>
             </div>
 
-            <div>
+            <div id="resultDiv">
                 <ul id="searchResult">
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
+                    <li name="page1">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
+
+
+                    <li name="page2">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
-                    </li>
-                    <li>
-                        <img src="" alt="food">
-                        <h3 class="name"></h3>
-                        <h5 class="search-tags"></h5>
-                        Original website link: <a href="" class="url"></a>
-                        <h5 class="info"></h5>
+
+                    <li name="page3">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
+
+                <button onclick="changeCurrentPage('left', undefined)">PREV PAGE</button>
+                <button onclick="changeCurrentPage(undefined, 0)">1</button>
+                <button onclick="changeCurrentPage(undefined, 1)">2</button>
+                <button onclick="changeCurrentPage(undefined, 2)">3</button>
+                <button onclick="changeCurrentPage('right', undefined)">NEXT PAGE</button>
             </div>
         </main>
 
