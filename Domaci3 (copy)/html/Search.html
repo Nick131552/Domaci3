@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+
+        <title>Home</title>
+        
+        <link rel="stylesheet" type="text/css" 
+        href="../css/search.css">
+
+    </head>
+
+    <body id="body">        
+
+        <header>
+            <nav>
+                <div><a href="../index.html">HOME</a></div>
+                <div><a href="Nutrition.html">RECIPE ANALYSIS</a></div>
+                <div>
+                    <a href="Search.html"  onclick="setMealType('&from=0&to=20&mealtype=lunch')" style="display: block;">LIST</a>
+                    <a href="Search.html" onclick="setMealType('&from=20&to=40&mealtype=breakfast')">BREAKFAST</a>
+                    <a href="Search.html" onclick="setMealType('&from=0&to=20&mealtype=lunch')">LUNCH</a>
+                    <a href="Search.html" onclick="setMealType('&from=40&to=60&mealtype=dinner')">DINNER</a>
+                </div>
+                <div><a href="AboutUs.html">ABOUT US</a></div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="searchDiv">
+                <form>
+                    <label>
+                        <h4>Food name:</h4>
+                        <input type="text" name="q" placeholder="Ex: chicken"  value="chicken" required>
+                    </label>
+
+                    <label>
+                        <h4>Filters: </h4>
+                        <input type="checkbox" onclick="checkIfChecked(this)" name="Diet">Diet
+                        <input type="checkbox" onclick="checkIfChecked(this)" name="Ingr">Number of ingredients
+                        <input type="checkbox" onclick="checkIfChecked(this)" name="Health">Health labels
+                    </label>
+
+                    <label>
+                        <h4>Diet:</h4>
+                        <input type="text" name="diet" placeholder="Ex: low-fat">
+                    </label>
+
+                    <label>
+                        <h4>Number of ingredients:</h4>
+                        <input type="number" name="ingr" placeholder="Ex: 5">
+                    </label>
+
+                    <label>
+                        <h4>Health labels:</h4>
+                        <input type="text" name="health" placeholder="Ex: peanut free">
+                    </label>
+
+                </form>
+                <button onclick="search()">SEARCH</button>
+            </div>
+
+            <div id="resultDiv">
+                <ol id="searchResult">
+                    <li name="page1">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li name="page2">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li name="page3">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li name="page4">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li name="page5">
+                        <ul>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                            <li>
+                                <img src="" alt="food">
+                                <h3 class="name"></h3>
+                                <h5 class="search-tags"></h5>
+                                Original website link: <a href="" class="url"></a>
+                                <h5 class="info"></h5>
+                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <button onclick="changeCurrentPage('left', undefined)">PREV PAGE</button>
+                <button onclick="changeCurrentPage(undefined, 0)">1</button>
+                <button onclick="changeCurrentPage(undefined, 1)">2</button>
+                <button onclick="changeCurrentPage(undefined, 2)">3</button>
+                <button onclick="changeCurrentPage(undefined, 3)">4</button>
+                <button onclick="changeCurrentPage(undefined, 4)">5</button>
+                <button onclick="changeCurrentPage('right', undefined)">NEXT PAGE</button>
+                </ol>
+
+            </div>
+        </main>
+
+
+        <footer>
+            <nav>
+                <a href="../index.html">HOME</a>
+                <a href="Nutrition.html">RECIPE ANALYSIS</a>
+                <a href="Search.html">LIST</a>
+                <a href="AboutUs.html">ABOUT US</a>
+            </nav>
+        </footer>
+
+        <script id="script" src="../scripts/search.js"></script>
+    </body>
+</html>

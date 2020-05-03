@@ -1,0 +1,101 @@
+body{
+    padding: 0 10vw 0 10vw;
+    z-index: 1;
+    font-family: sans-serif;
+}
+
+a{
+    display:inline-block;
+
+    color: black;
+    font-size: 2vh;
+    text-decoration: none;
+}
+
+header{
+    height: 4vh;
+}
+header>nav{
+    display: flex;
+
+    width: 100%;
+}
+
+header div{
+    z-index: 1000;
+
+    height: 4vh;
+    width: 25%;
+
+    line-height: 4vh;
+    text-align: center;
+
+    background-color: white;
+    border: 2px black solid;
+}
+
+header a, footer a{
+    width: 100%;
+}
+
+header a:hover, footer a:hover{
+    background-color: lightgray;
+}
+
+header div:nth-of-type(3) a{
+    display: none;
+
+    margin: 0 0 2vh 0;
+}
+header div:nth-of-type(3):hover a{
+    display: block;
+}
+header div:nth-of-type(3):hover{
+    height: auto;
+}
+
+main>div {
+    z-index: 1;
+    height: 32vh;
+    margin: 20vh 0 0vh 0;
+    padding: 0 3vw 0 3vw;
+
+    text-align: center;
+
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 10px;
+}
+
+main>div h5{
+    font-size: 2.5vh;
+}
+img{
+    z-index: -1;
+    position: absolute;
+    width: 78.6%;
+    height: 120%;
+
+    opacity: 0.5;
+}
+
+
+footer{
+    height: 4vh;
+    margin: 5vh 0 0 0;
+
+    border: 2px black solid;
+}
+
+footer>nav{
+    display: flex;
+
+    width: 100%;
+}
+
+footer a{
+    flex-grow: 1;
+
+    line-height: 4vh;
+    text-align: center;
+}

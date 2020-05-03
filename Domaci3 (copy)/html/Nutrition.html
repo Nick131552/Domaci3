@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+
+        <title>Nutrition</title>
+        
+        <link rel="stylesheet" type="text/css" 
+        href="../css/nutrition.css">
+
+    </head>
+
+    <body id="body">
+
+        <header>
+            <nav>
+                <div><a href="../index.html">HOME</a></div>
+                <div><a href="Nutrition.html">RECIPE ANALYSIS</a></div>
+                <div>
+                    <a href="Search.html"  onclick="setMealType('&from=0&to=20&mealtype=lunch')" style="display: block;">LIST</a>
+                    <a href="Search.html" onclick="setMealType('&from=20&to=40&mealtype=breakfast')">BREAKFAST</a>
+                    <a href="Search.html" onclick="setMealType('&from=0&to=20&mealtype=lunch')">LUNCH</a>
+                    <a href="Search.html" onclick="setMealType('&from=40&to=60&mealtype=dinner')">DINNER</a>
+                </div>
+                <div><a href="AboutUs.html">ABOUT US</a></div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="searchDiv">
+                <form>
+                    <label>
+                        <h4>Food name:</h4>
+                        <input type="text" value="chicken" name="q">
+                    </label>
+                    <label>
+                        <h4>Original URL: </h4>
+                        <input type="text" value="www.seriouseats.com" name="url">
+                    </label>
+                    <label>
+                        <h4>FIND RECIPE URLS AT:</h4>
+                        <a href="Search.html">  LIST  </a>
+                    </label>
+                </form>
+                <button onclick="analysis()">ANALYSIS</button>
+            </div>
+
+            <div id="resultDiv">
+                <div>
+                    <img src="" alt="img">
+                    <h3 class="name"></h3>
+                    <h5 class="serving"></h5>
+                    <h5 class="calories"></h5>
+                    <h5 class="energy"></h5>
+                    <h5 class="fat"></h5>
+                    <a href="" class="link"></a>
+                </div>
+                <div>
+                    <h3 class="ingredients">Ingredients: </h3>
+                    <p></p>
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer>
+            <nav>
+                <a href="../index.html">HOME</a>
+                <a href="Nutrition.html">RECIPE ANALYSIS</a>
+                <a href="Search.html">LIST</a>
+                <a href="AboutUs.html">ABOUT US</a>
+            </nav>
+        </footer>
+
+        <script id="script" src="../scripts/nutrition.js"></script>
+    </body>
+</html>

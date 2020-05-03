@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+
+        <title>Home</title>
+        
+        <link rel="stylesheet" type="text/css" 
+        href="css/index.css">
+
+    </head>
+
+    <body id="body">
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+        
+        <div id="modalWindow">
+            <button onclick="closeModalWindow()">X</button>
+        </div>
+
+        <header>
+            <nav>
+                <div><a href="index.html">HOME</a></div>
+                <div><a href="html/Nutrition.html">RECIPE ANALYSIS</a></div>
+                <div>
+                    <a href="html/Search.html"  onclick="setMealType('lunch')" style="display: block;">LIST</a>
+                    <a href="html/Search.html" onclick="setMealType('breakfast')">BREAKFAST</a>
+                    <a href="html/Search.html" onclick="setMealType('lunch')">LUNCH</a>
+                    <a href="html/Search.html" onclick="setMealType('dinner')">DINNER</a>
+                </div>
+                <div><a href="html/AboutUs.html">ABOUT US</a></div>
+            </nav>
+        </header>
+
+        <main>
+            <div id="slider">
+                <button onclick="moveSlider('left')"><img src="images/arrow.svg" alt="left" style="transform: rotate(180deg);"></button>
+
+                <ul id="sliderList">
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">10</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">1</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button onclick="openModalWindow(this)">READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">2</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button onclick="openModalWindow(this)">READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">3</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button onclick="openModalWindow(this)">READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">4</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">5</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">6</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">7</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">8</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">9</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                </ul>
+
+                <button onclick="moveSlider('right')"><img src="images/arrow.svg" alt="right"></button>
+            </div>
+
+
+            <div id="topRated">
+                <ul id="ratingList">
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li style="display: none;">
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li style="display: none;">
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li style="display: none;">
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                </ul>
+
+                <button onclick="loadMore()">LOAD MORE</button>
+            </div>
+
+
+            <div id="best">
+                <h3></h3>
+                <ul id="bestList">
+                    <li>
+                        <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
+                        <h5 class="name">TITLE 1</h5>
+                    </li>
+                    <li>
+                        <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
+                        <h5 class="name">TITLE 2</h5>
+                    </li>
+                    <li>
+                        <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
+                        <h5 class="name">TITLE 3</h5>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div id="feed">
+                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-width="500" data-height="600"></div>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="html/Nutrition.html">RECIPE ANALYSIS</a>
+                <a href="html/Search.html">LIST</a>
+                <a href="html/AboutUs.html">ABOUT US</a>
+            </nav>
+            <a style="display: none;" href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a>  <a style="display: none;" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </footer>
+
+        <script id="script" src="scripts/index.js"></script>
+    </body>
+</html>
