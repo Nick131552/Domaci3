@@ -1,12 +1,11 @@
-let sliderList = document.getElementById("sliderList").children;
-let sliderClone = {elements: [], shown: [0, 1, 2, 3, 4]}
-let transitionAvailable = true;
 
+let sliderList = document.getElementById("slider")
 
 let ratingList = {elements: document.getElementById("ratingList").children, shown: [0, 1, 2, 3, 4, 5]}
 let bestList = document.getElementById("bestList").children
 
 let modalWindow = document.getElementById("modalWindow");
+
 
 let lunch = {0: "chicken", 1: "croissant", 2: "eggs", 3: "beef", 4: "fish", 5: "soup", 6: "sandwich", 7: "chicken", 8: "salad", 9: "rice"}
 let dessert = {0: "ice-cream", 1: "waffle", 2: "pancake", 3: "cake", 4: "crepe", 5: "donut", 6: "cookie", 7: "fruit", 8: "pie", 9: "scone"}
@@ -17,59 +16,47 @@ let food = list[Math.floor(Math.random()*2).toString()][Math.floor(Math.random()
 let healthLabel = {0:'Balanced', 1:'High-protein', 2:'Low-fat', 3:'Low-carb'}
 let label = healthLabel[Math.floor(Math.random()*4).toString()]
 
-document.getElementById("slider").addEventListener("mouseenter", function(){
-    document.addEventListener("keydown", mouseInSlider)
+
+let a = document.getElementsByClassName("slide")
+
+sliderList.addEventListener("mouseenter", function(){
+    document.addEventListener("keydown", moveSlide)
 })
-document.getElementById("slider").addEventListener("mouseleave", function(){
-    document.removeEventListener("keydown", mouseInSlider)
+sliderList.addEventListener("mouseleave", function(){
+    document.removeEventListener("keydown", moveSlide)
 })
-function mouseInSlider(e){
-    if (e.keyCode == '39'){
-        moveSlider('right')
+
+function moveSlide(e){
+    if (e.keyCode == '37'){
+        setTimeout(function(){a[0].click()}, 0)
     }
-    else if (e.keyCode == '37'){
-        moveSlider('left')
+    else if (e.keyCode == '39'){
+        setTimeout(function(){a[1].click()}, 0)
     }
 }
 
-setInterval(function(){moveSlider('right')}, 3000)
-function moveSlider(direction){
-    if (transitionAvailable) {
-        transitionAvailable = false
 
-        if (direction === 'left'){
-            sliderList[4].parentNode.removeChild(sliderList[4])
+let slidePos = [1, 2, 3];
+function slide(dir){
+    if (dir === 'right'){
+        if (slidePos[2] != 10){
+            a[1].setAttribute("href", "#slide"+(slidePos[2]+1))
+            slidePos = slidePos.map(elem => elem+1);
+        }
+        else {
+            a[1].setAttribute("href", "#slide"+1)
+            slidePos = [1, 2, 3];
+        }
+    }
 
-            if (window.innerWidth <= 450){
-            sliderList[2].style.opacity = "1"
-            sliderList[0].style.margin = "0 0.5vw 0 30vw"
-            }
-            else {
-                sliderList[0].style.opacity = "1"
-                sliderList[0].style.margin = "0 0.5vw 0 10vw"
-            }
-            sliderList[3].style.opacity = "0"
-
-                    for (let m = 0; m < 5; m++){
-                        if (sliderClone["shown"][m] != 0){
-                            sliderClone["shown"][m]--
-                        }
-                        else {
-                            sliderClone["shown"][m] = 9;
-                        }
-                    }
-
-                    setTimeout(function(){sliderList[0].parentNode.insertBefore(sliderClone['elements'][sliderClone["shown"][0]], sliderList[0].parentNode.firstElementChild)}, 2000)
-                    
-                    setTimeout(function(){
-                        sliderList[1].style.transition = "opacity 2s"
-                        sliderList[1].style.margin = "0 0.5vw 0 0vw"
-                        setTimeout(function(){
-                            sliderList[1].style.transition = "";
-                        }, 10)
-                    }, 2001)
-
-                    sliderList[3].lastElementChild.setAttribute("onclick", "")
+    else if (dir === 'left'){
+        if (slidePos[0] != 1){
+            a[0].setAttribute("href", "#slide"+(slidePos[0]-1))
+            slidePos = slidePos.map(elem => elem-1);
+        }
+        else {
+            a[0].setAttribute("href", "#slide"+10)
+            slidePos = [8, 9, 10];
         }
 
         
