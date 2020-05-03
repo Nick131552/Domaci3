@@ -1,54 +1,46 @@
-let sliderList = {elements: document.getElementById("sliderList").children, shown: [0, 1, 2]}
+let sliderList = document.getElementById("slider")
 let ratingList = {elements: document.getElementById("ratingList").children, shown: [0, 1, 2, 3, 4, 5]}
 let modalWindow = document.getElementById("modalWindow");
+let a = document.getElementsByClassName("slide")
 
-setInterval(function(){moveSlider('right')}, 3000)
-function moveSlider(direction){
-    if (direction === 'left'){
-        if (sliderList["shown"][0] != 0){
-            sliderList["elements"][sliderList["shown"][0]-1].style.display = "block";
-            sliderList["elements"][sliderList["shown"][2]].style.display = "none";
+sliderList.addEventListener("mouseenter", function(){
+    document.addEventListener("keydown", moveSlide)
+})
+sliderList.addEventListener("mouseleave", function(){
+    document.removeEventListener("keydown", moveSlide)
+})
 
-            sliderList["shown"][0]--;
-            sliderList["shown"][1]--;
-            sliderList["shown"][2]--;
-        }
-    else {
-        sliderList["elements"][sliderList["shown"][0]].style.display = "none";
-        sliderList["elements"][sliderList["shown"][1]].style.display = "none";
-        sliderList["elements"][sliderList["shown"][2]].style.display = "none";
-        sliderList["elements"][7].style.display = "block";
-        sliderList["elements"][8].style.display = "block";
-        sliderList["elements"][9].style.display = "block";
-
-
-        sliderList["shown"][0] = 7;
-        sliderList["shown"][1] = 8;
-        sliderList["shown"][2] = 9;
+function moveSlide(e){
+    if (e.keyCode == '37'){
+        setTimeout(function(){a[0].click()}, 0)
     }
+    else if (e.keyCode == '39'){
+        setTimeout(function(){a[1].click()}, 0)
     }
+}
 
-    else if(direction === 'right'){
-        if (sliderList["shown"][2] != 9){
-            sliderList["elements"][sliderList["shown"][0]].style.display = "none";
-            sliderList["elements"][sliderList["shown"][2]+1].style.display = "block";
 
-            sliderList["shown"][0]++;
-            sliderList["shown"][1]++;
-            sliderList["shown"][2]++;
+let slidePos = [1, 2, 3];
+function slide(dir){
+    if (dir === 'right'){
+        if (slidePos[2] != 10){
+            a[1].setAttribute("href", "#slide"+(slidePos[2]+1))
+            slidePos = slidePos.map(elem => elem+1);
         }
         else {
-            sliderList["elements"][sliderList["shown"][0]].style.display = "none";
-            sliderList["elements"][sliderList["shown"][1]].style.display = "none";
-            sliderList["elements"][sliderList["shown"][2]].style.display = "none";
-            sliderList["elements"][0].style.display = "block";
-            sliderList["elements"][1].style.display = "block";
-            sliderList["elements"][2].style.display = "block";
+            a[1].setAttribute("href", "#slide"+1)
+            slidePos = [1, 2, 3];
+        }
+    }
 
-
-            sliderList["shown"][0] = 0;
-            sliderList["shown"][1] = 1;
-            sliderList["shown"][2] = 2;
+    else if (dir === 'left'){
+        if (slidePos[0] != 1){
+            a[0].setAttribute("href", "#slide"+(slidePos[0]-1))
+            slidePos = slidePos.map(elem => elem-1);
+        }
+        else {
+            a[0].setAttribute("href", "#slide"+10)
+            slidePos = [8, 9, 10];
         }
     }
 }

@@ -42,6 +42,7 @@ main{
 #slider{
     display: flex;
 
+
     height: 38vh;
     width: 60vw;
 
@@ -52,6 +53,9 @@ main{
 
 #slider>ul{
     display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 
     width: 85%;
 
@@ -61,11 +65,16 @@ main{
 }
 
 #slider li{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    
 
-    width: 16vw;
-    height: 15vw;
+    width: 15.6vw;
+    height: auto;
     margin: 0 1vw 0 1vw;
+
 
     text-align: center;
     border: 2px black solid;
@@ -76,7 +85,7 @@ main{
 }
 
 
-#slider>button{
+#slider>a{
     width: 2vw;
     height: 6vh;
 
