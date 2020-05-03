@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="width=device-width">
+        <meta charset="UTF-8">
+
+        <title>Product</title>
+        
+        <link rel="stylesheet" type="text/css" 
+        href="index.css">
+    </head>
+
+<body>
+<div class="container">
+  <div class="add-product">
+    
+      <div>
+        <label>Product name:</label>
+        <input id="name"type="text" placeholder="Casio Watch" required/>
+      </div>
+      
+      <div>
+        <label>Product description:</label>
+        <textarea id="description"placeholder="Sample description..."required></textarea>
+      </div>
+      
+      <div>
+        <label>Product image:</label>
+        <input id = "image"type="text" placeholder="http://...jpg" required/>
+      </div>
+      
+      <div>
+        <label>Product price:</label>
+        <input id="price" type="number" min="0" placeholder="33.50" step="0.01" required/>
+      </div>
+      
+      <button onclick="addItem()">Add</button>
+    
+  </div>
+  
+  <div class="list-products">
+    <div class="product">
+      <img src="https://sc02.alicdn.com/kf/HTB1gHRfg6uhSKJjSspmq6AQDpXaI/Accept-Sample-Design-Your-Own-Blank-Wrist.jpg_350x350.jpg" />
+      <p>Sample Watch</p>
+      <p>$199</p>
+      <button class="details-button">Details</button>
+      <button class="buy-button">Buy</button>
+    </div>
+    
+  </div>
+  
+  <div class="shopping-cart">
+    <div class="shopping-cart-products">
+      <div class="shopping-cart-product">
+        <div class="product-info">
+          <div>
+            <h3>Sample Watch</h3>
+            <p class="totalProductPrice">$199 &times; 1</p>
+          </div>
+          <img src="https://sc02.alicdn.com/kf/HTB1gHRfg6uhSKJjSspmq6AQDpXaI/Accept-Sample-Design-Your-Own-Blank-Wrist.jpg_350x350.jpg" />
+        </div>
+        <div class="product-count">
+          <button onclick="changeProductNum(this, '-')">-</button>
+          <span class="productNum">1</span>
+          <button onclick="changeProductNum(this, '+')">+</button>
+        </div>
+      </div>
+      
+      <div class="shopping-cart-product">
+        <div class="product-info">
+          <div>
+            <h3>Product #2</h3>
+            <p class="totalProductPrice">$230 &times; 1</p>
+          </div>
+          <img src="https://pl.shadestation.com/media/thumbs/350x350/media/product_images/Fossil-Watches-FS5439fw350fh350.jpg" />
+        </div>
+        <div class="product-count">
+          <button onclick="changeProductNum(this, '-')">-</button>
+          <span class="productNum">1</span>
+          <button onclick="changeProductNum(this, '+')">+</button>
+        </div>
+      </div>
+      
+    </div>
+    <div class="shopping-cart-summary">
+      <div>Total: <b>$429</b></div>
+      <div><button onclick="purchaseModalWindow()">Purchase</button></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="index.js"></script>
+</body>
