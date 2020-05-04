@@ -9,270 +9,218 @@
         <title>Home</title>
         
         <link rel="stylesheet" type="text/css" 
-        href="../css/search.css">
+        href="css/index.css">
 
     </head>
 
-    <body id="body">        
+    <body id="body">
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+        
+        <div id="modalWindow">
+            <button onclick="closeModalWindow()">X</button>
+        </div>
 
         <header>
             <nav>
-                <div><a href="../index.html">HOME</a></div>
-                <div><a href="Nutrition.html">RECIPE ANALYSIS</a></div>
+                <div><a href="index.html">HOME</a></div>
+                <div><a href="html/Nutrition.html">RECIPE ANALYSIS</a></div>
                 <div>
-                    <a href="Search.html"  onclick="setMealType('&from=0&to=20&mealtype=lunch')" style="display: block;">LIST</a>
-                    <a href="Search.html" onclick="setMealType('&from=20&to=40&mealtype=breakfast')">BREAKFAST</a>
-                    <a href="Search.html" onclick="setMealType('&from=0&to=20&mealtype=lunch')">LUNCH</a>
-                    <a href="Search.html" onclick="setMealType('&from=40&to=60&mealtype=dinner')">DINNER</a>
+                    <a href="html/Search.html"  onclick="setMealType('lunch')" style="display: block;">LIST</a>
+                    <a href="html/Search.html" onclick="setMealType('breakfast')">BREAKFAST</a>
+                    <a href="html/Search.html" onclick="setMealType('lunch')">LUNCH</a>
+                    <a href="html/Search.html" onclick="setMealType('dinner')">DINNER</a>
                 </div>
-                <div><a href="AboutUs.html">ABOUT US</a></div>
+                <div><a href="html/AboutUs.html">ABOUT US</a></div>
             </nav>
         </header>
 
         <main>
-            <div id="searchDiv">
-                <form>
-                    <label>
-                        <h4>Food name:</h4>
-                        <input type="text" name="q" placeholder="Ex: chicken"  value="chicken" required>
-                    </label>
+            <div id="slider">
+                <button onclick="moveSlider('left')"><img src="images/arrow.svg" alt="left" style="transform: rotate(180deg);"></button>
 
-                    <label>
-                        <h4>Filters: </h4>
-                        <input type="checkbox" onclick="checkIfChecked(this)" name="Diet">Diet
-                        <input type="checkbox" onclick="checkIfChecked(this)" name="Ingr">Number of ingredients
-                        <input type="checkbox" onclick="checkIfChecked(this)" name="Health">Health labels
-                    </label>
+                <ul id="sliderList">
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">10</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
 
-                    <label>
-                        <h4>Diet:</h4>
-                        <input type="text" name="diet" placeholder="Ex: low-fat">
-                    </label>
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">1</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button onclick="openModalWindow(this)">READ MORE</button>
+                    </li>
 
-                    <label>
-                        <h4>Number of ingredients:</h4>
-                        <input type="number" name="ingr" placeholder="Ex: 5">
-                    </label>
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">2</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button onclick="openModalWindow(this)">READ MORE</button>
+                    </li>
 
-                    <label>
-                        <h4>Health labels:</h4>
-                        <input type="text" name="health" placeholder="Ex: peanut free">
-                    </label>
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">3</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button onclick="openModalWindow(this)">READ MORE</button>
+                    </li>
 
-                </form>
-                <button onclick="search()">SEARCH</button>
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">4</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">5</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">6</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">7</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">8</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                    <li style="opacity: 0;">
+                        <img src="" alt="food">
+                        <h3 class="productName">9</h3>
+                        <h5 class="productDetails">Info 1</h5>
+                        <button>READ MORE</button>
+                    </li>
+
+                </ul>
+
+                <button onclick="moveSlider('right')"><img src="images/arrow.svg" alt="right"></button>
             </div>
 
-            <div id="resultDiv">
-                <ol id="searchResult">
-                    <li name="page1">
-                        <ul>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                        </ul>
+
+            <div id="topRated">
+                <ul id="ratingList">
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
                     </li>
-
-
-                    <li name="page2">
-                        <ul>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
                     </li>
-
-                    <li name="page3">
-                        <ul>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
                     </li>
-
-                    <li name="page4">
-                        <ul>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
                     </li>
-
-                    <li name="page5">
-                        <ul>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                            <li>
-                                <img src="" alt="food">
-                                <h3 class="name"></h3>
-                                <h5 class="search-tags"></h5>
-                                Original website link: <a href="" class="url"></a>
-                                <h5 class="info"></h5>
-                                <a href="Nutrition.html" onclick='(recipeAnalysis(this))'>RECIPE ANALYSIS</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
                     </li>
+                    <li>
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li style="display: none;">
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li style="display: none;">
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                    <li style="display: none;">
+                        <img src="" onclick="openModalWindow(this)" alt="moon">
+                        <h3 class="name">Name</h3>
+                        <h5 class="info1">Info 1</h5>
+                        <h5 class="info2">Info 2</h5>
+                        <h5 class="info3">Info 3</h5>
+                    </li>
+                </ul>
 
-                    <button onclick="changeCurrentPage('left', undefined)">PREV PAGE</button>
-                <button onclick="changeCurrentPage(undefined, 0)">1</button>
-                <button onclick="changeCurrentPage(undefined, 1)">2</button>
-                <button onclick="changeCurrentPage(undefined, 2)">3</button>
-                <button onclick="changeCurrentPage(undefined, 3)">4</button>
-                <button onclick="changeCurrentPage(undefined, 4)">5</button>
-                <button onclick="changeCurrentPage('right', undefined)">NEXT PAGE</button>
-                </ol>
+                <button onclick="loadMore()">LOAD MORE</button>
+            </div>
 
+
+            <div id="best">
+                <h3></h3>
+                <ul id="bestList">
+                    <li>
+                        <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
+                        <h5 class="name">TITLE 1</h5>
+                    </li>
+                    <li>
+                        <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
+                        <h5 class="name">TITLE 2</h5>
+                    </li>
+                    <li>
+                        <img src="images/moon.jpg" onclick="openModalWindow(this)" alt="moon">
+                        <h5 class="name">TITLE 3</h5>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div id="feed">
+                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-width="500" data-height="600"></div>
             </div>
         </main>
 
-
         <footer>
             <nav>
-                <a href="../index.html">HOME</a>
-                <a href="Nutrition.html">RECIPE ANALYSIS</a>
-                <a href="Search.html">LIST</a>
-                <a href="AboutUs.html">ABOUT US</a>
+                <a href="index.html">HOME</a>
+                <a href="html/Nutrition.html">RECIPE ANALYSIS</a>
+                <a href="html/Search.html">LIST</a>
+                <a href="html/AboutUs.html">ABOUT US</a>
             </nav>
+            <a style="display: none;" href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a>  <a style="display: none;" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </footer>
 
-        <script id="script" src="../scripts/search.js"></script>
+        <script id="script" src="scripts/index.js"></script>
     </body>
 </html>
